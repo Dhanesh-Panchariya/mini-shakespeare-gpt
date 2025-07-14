@@ -43,10 +43,10 @@ Training is GPU-accelerated (CUDA required). Do not run this on CPU.
 
 Once training completes, the model can generate text:
 
-python
-
+'''python
 context = torch.zeros((1, 1), dtype=torch.long, device='cuda')
 print(decode(model.generate(context, max_new_tokens=300)[0].tolist()))
+'''
 
 ---
 
