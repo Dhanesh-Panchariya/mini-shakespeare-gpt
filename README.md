@@ -1,38 +1,60 @@
-# mini-shakespeare-gpt
+# Mini Shakespeare GPT
 
-A tiny transformer-based character-level language model trained on Shakespeare's works using PyTorch.
+A minimal character-level GPT model trained on Shakespeare's text using PyTorch and transformer blocks.
 
-This project implements a minimal version of a GPT-like architecture, combining:
-- Token + position embeddings
-- Multi-head self-attention
-- Feedforward layers
-- Layer normalization
-- Autoregressive text generation
+---
 
-Inspired by Andrej Karpathy's `nanoGPT`, with a focus on simplicity and educational value.
+## 📚 Description
 
-## 🚀 Features
+This project builds a simple GPT-style transformer from scratch, trained on a corpus of Shakespeare text. It learns to generate character-by-character text in Shakespearean style.
 
-- Character-level tokenization (no external tokenizer)
-- Configurable transformer architecture (layers, heads, embedding size)
-- Trains on plain text (`input.txt`)
-- Efficient batching with context windows
-- CUDA support (if available)
-- Text generation using sampling
+Inspired by [Andrej Karpathy’s nanoGPT](https://github.com/karpathy/nanoGPT).
+
+---
 
 ## 🧠 Model Architecture
 
-- Transformer with:
-  - `n_layers = 6`
-  - `n_heads = 6`
-  - `n_embd = 384`
-  - `dropout = 0.2`
-- Trained on sequences of length `block_size = 256`
-- ~1.1 million parameters
+- 6 Transformer blocks  
+- 6 attention heads  
+- 384-dimensional embeddings  
+- Sequence/block size: 256 tokens  
+- ~1.1 million parameters  
 
-## 📝 Usage
+---
 
-### Training
+## 📁 Files
+
+- `mini_shakespeare.py` — Full PyTorch training script  
+- `Mini_Shakespheare.ipynb` — Notebook version for experimentation  
+- `input.txt` — Raw training data (Shakespeare text)  
+
+---
+
+## 🚀 How to Train
 
 ```bash
-python train.py
+python mini_shakespeare.py
+```
+Training is GPU-accelerated (CUDA required). Do not run this on CPU.
+
+---
+
+## ✍️ Text Generation
+
+Once training completes, the model can generate text:
+
+python
+
+context = torch.zeros((1, 1), dtype=torch.long, device='cuda')
+print(decode(model.generate(context, max_new_tokens=300)[0].tolist()))
+
+---
+
+##🧪 Requirements
+
+Python 3.8+
+PyTorch with CUDA support
+Basic GPU (4GB+ VRAM recommended)
+
+📖 License
+MIT License
