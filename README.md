@@ -14,7 +14,7 @@ A high-performance, *from-scratch* Transformer implemented in **PyTorch**, train
 | Maximum Context / Block Size  | 256 previous characters                   |
 | Dropout Rate                  | 0.2                                       |
 | Optimizer & Learning Rate     | AdamW @ 3e‑4                              |
-| Training Iterations           | 5,000 mini-batch steps                    |
+| Training Iterations           | 2,500 mini-batch steps                    |
 | Training Time (GPU)           | ~3 minutes per epoch (medium GPU)         |
 
 ---
