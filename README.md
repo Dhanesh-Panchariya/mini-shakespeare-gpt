@@ -34,10 +34,10 @@ All functionality is accessed via command-line flags:
 
 ```bash
 # Training mode (GPU recommended, but CPU still works)
-python mini_shakespeare.py --mode train
+python mini_shakespeare.py --train
 
 # Generation mode with CPU or GPU using pretrained weights
-python mini_shakespeare.py --mode generate --prompt "To be, or not to be" --max_new_tokens 150
+python mini_shakespeare.py --generate
 ```
 
 ## 📂 Repo Structure
